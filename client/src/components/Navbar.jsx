@@ -1,9 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="navbar">
-      <span className="logo">Diana's App</span>
+      <span className="logo">
+        <Link className="link" to="/">
+          Diana's App
+        </Link>
+      </span>
       <ul className="list">
         <li className="listItem">
           <img
