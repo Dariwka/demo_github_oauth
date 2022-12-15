@@ -11,13 +11,10 @@ const Home = ({ user }) => {
       );
       const data = await res.json();
       setItems(data);
-      console.log(data);
     };
 
     fetchRepos();
   }, [user]);
-
-  console.log(items);
 
   return (
     <div className="home">
