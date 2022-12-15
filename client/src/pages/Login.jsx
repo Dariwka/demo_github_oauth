@@ -1,4 +1,6 @@
 import React from "react";
+import Google from "../img/google.png";
+import Facebook from "../img/facebook.png";
 import Github from "../img/github.png";
 
 const Login = () => {
@@ -7,7 +9,15 @@ const Login = () => {
       <h1 className="loginTitle">Login</h1>
       <div className="wrapper">
         <div className="left">
-          <div className="loginButton">
+          <div className="loginButton google">
+            <img src={Google} alt="" className="icon" />
+            Google
+          </div>
+          <div className="loginButton facebook">
+            <img src={Facebook} alt="" className="icon" />
+            Facebook
+          </div>
+          <div className="loginButton github">
             <img src={Github} alt="" className="icon" />
             Github
           </div>
