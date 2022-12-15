@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import Git from "../img/github_img.jpg";
 
-const Card = ({ post }) => {
+const Card = ({ item }) => {
   const [showModal, setShowModal] = useState(false);
+
+  const close = () => {
+    setShowModal(!showModal);
+  };
 
   return (
     <>
       <div className="card" onClick={() => setShowModal(!showModal)}>
-        <span className="title">{post.title}</span>
-        <img src={post.img} alt="" className="img" />
-        <p className="desc">{post.desc}</p>
+        <span className="title">{item.name}</span>
+        <img src={Git} alt="" className="img" />
+        <p className="desc">{item.desc}</p>
       </div>
-      {showModal && <Modal />}
+      {showModal && <Modal item={item} close={close} />}
     </>
   );
 };

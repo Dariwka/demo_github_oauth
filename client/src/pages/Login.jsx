@@ -2,12 +2,15 @@ import React from "react";
 import Github from "../img/github.png";
 
 const Login = () => {
+  const github = () => {
+    window.open("http://localhost:5000/auth/github", "_self");
+  };
   return (
     <div className="login">
       <h1 className="loginTitle">Login</h1>
       <div className="wrapper">
         <div className="left">
-          <div className="loginButton">
+          <div className="loginButton" onClick={github}>
             <img src={Github} alt="" className="icon" />
             Github
           </div>
