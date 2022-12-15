@@ -26,11 +26,38 @@ router.get("/logout", (req, res) => {
   res.redirect(CLIENT_URL);
 });
 
+/*GOOGLE */
 router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 
 router.get(
   "/google/callback",
   passport.authenticate("google", {
+    successRedirect: CLIENT_URL,
+    failureRedirect: "/login/failed",
+  })
+);
+
+/*GITHUB */
+router.get("/github", passport.authenticate("github", { scope: ["profile"] }));
+
+router.get(
+  "/github/callback",
+  passport.authenticate("github", {
+    successRedirect: CLIENT_URL,
+    failureRedirect: "/login/failed",
+  })
+);
+
+/*FACEBOOK */
+
+router.get(
+  "/facebook",
+  passport.authenticate("facebook", { scope: ["profile"] })
+);
+
+router.get(
+  "/facebook/callback",
+  passport.authenticate("facebook", {
     successRedirect: CLIENT_URL,
     failureRedirect: "/login/failed",
   })
